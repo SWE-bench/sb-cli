@@ -10,6 +10,7 @@ dependencies = [
     "click<8.2.0",   # see https://github.com/fastapi/typer/discussions/1215
     "requests",
     "rich",
+    "typing-extensions",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
