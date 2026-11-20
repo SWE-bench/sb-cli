@@ -22,16 +22,24 @@ sb-cli get-report <subset> <split> <run_id> [options]
 
 ## Report Format
 
-The command outputs a summary to the console and saves two JSON files:
+The command outputs a summary to the console and saves the evaluation report as JSON:
 
 1. `{subset}__{split}__{run_id}.json`: The full evaluation report
-2. `{subset}__{split}__{run_id}.response.json`: Additional response data
+2. `{subset}__{split}__{run_id}.response.json`: Additional response data, when the service returns it
 
 The console summary includes:
 - Resolved instances (total and submitted)
 - Submission statistics
 - Error counts
 - Pending evaluations
+
+## Per-instance test logs
+
+The report JSON contains evaluation results. The hosted CLI does not provide a download command for raw evaluator logs such as `test_output.txt`.
+
+For a dataset split available to the [local SWE-bench evaluator](https://github.com/SWE-bench/SWE-bench#-usage), evaluate the same predictions locally to produce test output under `logs/evaluation/<run_id>/`. Local logs describe that local run. To compare outcomes, record the dataset split and evaluation image used.
+
+For a hosted Multimodal leaderboard submission, follow the [submission guide](../submit-to-leaderboard.md) and include the hosted run ID.
 
 ## Examples
 
