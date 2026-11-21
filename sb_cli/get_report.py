@@ -101,5 +101,5 @@ def get_report(
     report_path = safe_save_json(report, report_path, overwrite)
     typer.echo(f"Saved full report to {report_path}!")
     if response:
-        response_path = safe_save_json(response, response_path, False)
+        response_path = safe_save_json(response, response_path, overwrite)
         typer.echo(f"Saved response to {response_path}")
